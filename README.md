@@ -1,14 +1,14 @@
 # Bus-Number-Recognition
 
 
-## 1. Install
+## Install
 ```
 conda create -n myenv python=3.6
 conda activate myenv
 pip install -r requirements.txt
 ```
 
-## 2. How to run 
+## Usage
 It has three modules to be able to run the detection system. Detections can be done using four different models: YOLOv2,Sss MobileNet 300, YOLOv3 and YOLOv3-tiny (`--help` for more configurations)
 
 * `short_pipeline.py:` Given a sequence of images, give notice of the arrival of the bus, when the first detection of the expected line number occurs.
@@ -23,7 +23,7 @@ python short_pipeline.py -m mobilenet -i test_sets/set11/ -n 66
 
 <!-- ![ullpipelien gif](/readme/short_pipeline.gif) -->
 
-## 3. Stages of buses line numbers detection
+## Stages of buses line numbers detection
 1.  Bus detection stage
 <center><img src="readme/bus_detection.gif" alt="drawing" style="width:80%;"/></center>
 
@@ -33,3 +33,13 @@ python short_pipeline.py -m mobilenet -i test_sets/set11/ -n 66
 
 3.  Line numbers recognition stage
 <center><img src="readme/line_recognition.gif" alt="drawing" style="width:80%;"/></center>
+
+## Reference
+```
+@inproceedings{maina2020stop,
+  title={Stop the Bus!: computer vision for automatic recognition of urban bus lines},
+  author={Maina, Hern{\'a}n J and S{\'a}nchez, Jorge A},
+  booktitle={XXI Simposio Argentino de Inteligencia Artificial (ASAI 2020)-JAIIO 49 (Modalidad virtual)},
+  year={2020}
+}
+```
