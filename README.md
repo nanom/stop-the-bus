@@ -19,20 +19,20 @@ It has three modules to be able to run the detection system. Detections can be d
 ```
 python short_pipeline.py -m mobilenet -i test_sets/set11/ -n 66
 ```
-<center><img src="readme/short_pipeline.gif" alt="drawing" style="width:80%;"/></center>
+<center><img src="readme/short_pipeline.gif" alt="drawing" style="width:60%;"/></center>
 
 <!-- ![ullpipelien gif](/readme/short_pipeline.gif) -->
 
 ## Stages of buses line numbers detection
 1.  Bus detection stage
-<center><img src="readme/bus_detection.gif" alt="drawing" style="width:80%;"/></center>
+<center><img src="readme/bus_detection.gif" alt="drawing" style="width:60%;"/></center>
 
 
 2.  Line numbers  detection stage
-<center><img src="readme/line_detection.gif" alt="drawing" style="width:80%;"/></center>
+<center><img src="readme/line_detection.gif" alt="drawing" style="width:60%;"/></center>
 
 3.  Line numbers recognition stage
-<center><img src="readme/line_recognition.gif" alt="drawing" style="width:80%;"/></center>
+<center><img src="readme/line_recognition.gif" alt="drawing" style="width:60%;"/></center>
 
 ## Reference
 ```
