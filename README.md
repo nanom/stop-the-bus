@@ -2,7 +2,7 @@
 [[Paper]](https://49jaiio.sadio.org.ar/pdfs/asai/ASAI-10.pdf) [Colab] [[Video Demo]](https://www.youtube.com/watch?v=DeLpJ9ud7p4)
 
 <p align="center">
-<img src="readme/short_pipeline.gif" alt="Overview" style="width:70%;"/>
+<img src="readme/arquitectura.png" alt="Overview" style="width:70%;"/>
 </p>
 
 
