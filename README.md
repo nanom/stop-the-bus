@@ -1,5 +1,5 @@
 # Bus-Number-Recognition
-[[paper]](https://49jaiio.sadio.org.ar/pdfs/asai/ASAI-10.pdf) [Colab] [[Video Demo]](https://www.youtube.com/watch?v=DeLpJ9ud7p4)
+[[Paper]](https://49jaiio.sadio.org.ar/pdfs/asai/ASAI-10.pdf) [Colab] [[Video Demo]](https://www.youtube.com/watch?v=DeLpJ9ud7p4)
 
 <p align="center">
 <img src="readme/short_pipeline.gif" alt="Overview" style="width:70%;"/>
