@@ -1,0 +1,4 @@
+classes= 80
+names = /home/nano/famaf/tesis/busnumberdetection/object_detection/data/coco.names
+eval=coco
+

@@ -1,0 +1,5 @@
+# $ pip install -r <this file>
+numpy
+opencv-python
+pytesseract
+wget
