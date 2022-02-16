@@ -1,5 +1,14 @@
 # Bus-Number-Recognition
+[[paper]](https://49jaiio.sadio.org.ar/pdfs/asai/ASAI-10.pdf)
 
+<p align="center">
+<img src="readme/short_pipeline.gif" alt="Overview" style="width:70%;"/>
+</p>
+
+
+The goal of this project is the exploitation of computer vision techniques and the analysis of images for the generation of a tool that potentially allows people with visual impairments to be assisted. To achieve this, a modular architecture based on object detectors and optical character recognition is presented and evaluated, mainly constituted by two stages: one for the detection buses, based on the SSD-MobileNet object detection model; and another, responsible for line number recognition, where the EAST and OCR-Tesseract text detection and recognition models are tested, respectively. With a maximum probability of recognition of 62\% in a simple image; over an image sequence, the final system was able to correctly recognize the bus line in 72\% of the cases.
+
+For more information, please refer to our paper: [Stop the Bus!: Computer vision for automatic recognition of urban bus lines.](https://49jaiio.sadio.org.ar/pdfs/asai/ASAI-10.pdf)
 
 ## Install
 ```
@@ -19,20 +28,24 @@ It has three modules to be able to run the detection system. Detections can be d
 ```
 python short_pipeline.py -m mobilenet -i test_sets/set11/ -n 66
 ```
-<center><img src="readme/short_pipeline.gif" alt="drawing" style="width:60%;"/></center>
 
-<!-- ![ullpipelien gif](/readme/short_pipeline.gif) -->
 
 ## Stages of buses line numbers detection
 1.  Bus detection stage
-<center><img src="readme/bus_detection.gif" alt="drawing" style="width:60%;"/></center>
+<p align="center">
+<img src="readme/bus_detection.gif" alt="drawing" style="width:50%;"/>
+</p>
 
 
 2.  Line numbers  detection stage
-<center><img src="readme/line_detection.gif" alt="drawing" style="width:60%;"/></center>
+<p align="center">
+<img src="readme/line_detection.gif" alt="drawing" style="width:50%;"/>
+</p>
 
 3.  Line numbers recognition stage
-<center><img src="readme/line_recognition.gif" alt="drawing" style="width:60%;"/></center>
+<p align="center">
+<img src="readme/line_recognition.gif" alt="drawing" style="width:50%;"/>
+</p>
 
 ## Reference
 ```
