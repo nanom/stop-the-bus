@@ -1,51 +1,35 @@
-# Bus Number Detection
-
-### 1. Install using Conda
-> $ conda create -n myenv python=3.6
-
-> $ conda activate myenv
-
-> $ pip install -r requirements.txt 
+# Bus-Number-Recognition
 
 
-### 2. Run demo
-> $ python short_pipeline.py -i test_sets/set11/ -n 18
-
-```bash
--i IMAGE_PATH, --image_path IMAGE_PATH
-                    Path de imagen o directorio
--m MODEL, --model MODEL
-                    Modelo de detector a utilizar. Use -model
-                    ['yolo'|'mobilenet']. (Default: 'mobilenet')
--n EXPECTED_NUMBER, --expected_number EXPECTED_NUMBER
-                    Numero de autobus esperado
--v VERBOSE, --verbose VERBOSE
-                    Flag para depuracion. Muestra salidas de modulos
-                    principales. (Defaul: False)
--oconf OD_CONF_THRESHOLD, --od_conf_threshold OD_CONF_THRESHOLD
-                    Umbral de confidencia de detector. (Default: 0.5)
--oiou OD_IOU_THRESHOLD, --od_iou_threshold OD_IOU_THRESHOLD
-                    Indice de iou de detector. (Default: 0.45)
--econf E_CONF_THRESHOLD, --e_conf_threshold E_CONF_THRESHOLD
-                    Indice de confidencia de EAST. (Default: 0.001)
--eiou E_IOU_THRESHOLD, --e_iou_threshold E_IOU_THRESHOLD
-                    Indice de iou de EAST. (Default: 0.1)
--newsize NEWSIZE, --newsize NEWSIZE
-                    Redimensionar a imagen cuadrada para entrada en EAST.
-                    (Default: 128)
--pad PADDING, --padding PADDING
-                    Recorta un -pad porciento menos de pixeles en relacion
-                    al ancho y alto de la deteccion en EAST. (Default: 0)
+## 1. Install
+```
+conda create -n myenv python=3.6
+conda activate myenv
+pip install -r requirements.txt
 ```
 
-![ullpipelien gif](/readme/short_pipeline.gif)
+## 2. How to run 
+It has three modules to be able to run the detection system. Detections can be done using four different models: YOLOv2,Sss MobileNet 300, YOLOv3 and YOLOv3-tiny (`--help` for more configurations)
 
-### Stages of buses line numbers detection
-1.  Buses detection
-![bus detection gif](/readme/bus_detection.gif)
+* `short_pipeline.py:` Given a sequence of images, give notice of the arrival of the bus, when the first detection of the expected line number occurs.
+* `long_pipeline.py:` Given a sequence of images, it gives notice of the arrival of the bus, if at the end of the processing of all the images of the entered sequence, the expected line number is detected.
+* `real_camera.py`: sages in real time through a camera device.
 
-2.  Line numbers  detection
-![lines detection gif](/readme/line_detection.gif)
 
-3.  Line numbers recognition
-![lines recognition gif](/readme/line_recognition.gif)
+```
+python short_pipeline.py -m mobilenet -i test_sets/set11/ -n 66
+```
+<center><img src="readme/short_pipeline.gif" alt="drawing" style="width:80%;"/></center>
+
+<!-- ![ullpipelien gif](/readme/short_pipeline.gif) -->
+
+## 3. Stages of buses line numbers detection
+1.  Bus detection stage
+<center><img src="readme/bus_detection.gif" alt="drawing" style="width:80%;"/></center>
+
+
+2.  Line numbers  detection stage
+<center><img src="readme/line_detection.gif" alt="drawing" style="width:80%;"/></center>
+
+3.  Line numbers recognition stage
+<center><img src="readme/line_recognition.gif" alt="drawing" style="width:80%;"/></center>
