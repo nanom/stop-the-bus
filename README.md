@@ -12,6 +12,7 @@ For more information, please refer to our paper: [Stop the Bus!: Computer vision
 
 ## Install
 ```
+git clone https://github.com/nanom/Bus-Number-Recognition.git
 conda create -n myenv python=3.6
 conda activate myenv
 pip install -r requirements.txt
