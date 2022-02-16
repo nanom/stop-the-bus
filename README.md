@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-It has three modules to be able to run the detection system. Detections can be done using four different models: YOLOv2,Sss MobileNet 300, YOLOv3 and YOLOv3-tiny (`--help` for more configurations)
+It has three modules to be able to run the detection system. Detections can be done using four different models: YOLOv2, SSD-MobileNet, YOLOv3 and YOLOv3-tiny (`--help` for more configurations)
 
 * `short_pipeline.py:` Given a sequence of images, give notice of the arrival of the bus, when the first detection of the expected line number occurs.
 * `long_pipeline.py:` Given a sequence of images, it gives notice of the arrival of the bus, if at the end of the processing of all the images of the entered sequence, the expected line number is detected.
