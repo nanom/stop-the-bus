@@ -1,4 +1,4 @@
-# Bus-Number-Recognition
+# Bus-Line-Number-Recognition
 [[Paper]](https://49jaiio.sadio.org.ar/pdfs/asai/ASAI-10.pdf) [Colab] [[Video Demo]](https://www.youtube.com/watch?v=DeLpJ9ud7p4)
 
 <p align="center">
@@ -12,7 +12,7 @@ For more information, please refer to our paper: [Stop the Bus!: Computer vision
 
 ## Install
 ```
-git clone https://github.com/nanom/Bus-Number-Recognition.git
+git clone https://github.com/nanom/Bus-Line-Number-Recognition.git
 conda create -n myenv python=3.6
 conda activate myenv
 pip install -r requirements.txt
@@ -23,15 +23,15 @@ It has three modules to be able to run the detection system. Detections can be d
 
 * `short_pipeline.py:` Given a sequence of images, give notice of the arrival of the bus, when the first detection of the expected line number occurs.
 * `long_pipeline.py:` Given a sequence of images, it gives notice of the arrival of the bus, if at the end of the processing of all the images of the entered sequence, the expected line number is detected.
-* `real_camera.py`: sages in real time through a camera device.
+* `real_camera.py`: Recognition in real time through a camera device.
 
 
 ```
-python short_pipeline.py -m mobilenet -i test_sets/set11/ -n 66
+python short_pipeline.py -i test_images -m mobilenet -n 66
 ```
 
 
-## Stages of buses line numbers detection
+## Stages of buses line numbers recognition
 1.  Bus detection stage
 <p align="center">
 <img src="readme/bus_detection.gif" alt="drawing" style="width:50%;"/>
