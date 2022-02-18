@@ -188,7 +188,7 @@ def choiceModel(opc, conf_threshold=.5, iou_threshold=.45):
     Retorna clase instanciada de modelo de deteccion elegido
     """
 
-    models_availables = ['mobilenet','yolov2','yolov3','yolov3t']
+    models_availables = ['mobilenet','yolov2','yolov3t']
 
     if opc not in models_availables:
         sys.exit(f"Error!. Only {', '.join(models_availables)} models availables.")
@@ -250,31 +250,31 @@ def worker(net, ith, queue, output, verbose=False):
                 print("proc_{} > {}".format(ith,prediction))
 
 def getArguments():
-    ap = argparse.ArgumentParser(description='Pipeline')
+    ap = argparse.ArgumentParser(description='Stop The Bus!')
     ap.add_argument("-i","--image_path", required=True, type=str, 
-        help="Path de imagen o directorio")
+        help="Path of image or directory")
     ap.add_argument("-m", "--model", default='mobilenet', type=str, 
-        help="Modelo de detector a utilizar. Use -model ['yolov2'|'yolov3'|'yolov3t'|'mobilenet']. (Default: 'mobilenet')")
+        help="Detector model to use. Use --model ['mobilenet'|'yolov2'|'yolov3t']. (Default: 'mobilenet')")
     ap.add_argument("-n","--expected_number", required=True, default=000000, type=int, 
-        help="Numero de autobus esperado")
+        help="Expected bus number")
     ap.add_argument("-v","--verbose", default="True", type=str, 
-        help="Flag para depuracion. Muestra salidas de modulos principales. (Defaul: False)")
+        help="Flag for debugging. Show output from main modules. (Default: False)")
     ap.add_argument("-oconf", "--od_conf_threshold", default=0.5, type=float, 
-        help="Umbral de confidencia de detector. (Default: 0.5)")
+        help="Detector confidence threshold. (Default: 0.5)")
     ap.add_argument("-oiou", "--od_iou_threshold", default=0.45, type=float, 
-        help="Indice de iou de detector. (Default: 0.45)")
+        help="Detector IoU index. (Default: 0.45)")
     ap.add_argument("-econf", "--e_conf_threshold", default=0.001, type=float, 
-        help="Indice de confidencia de EAST. (Default: 0.001)")
+        help="EAST confidence index. (Default: 0.001)")
     ap.add_argument("-eiou", "--e_iou_threshold", default=0.1, type=float, 
-        help="Indice de iou de EAST. (Default: 0.1)")
+        help="EAST IoU index. (Default: 0.1)")
     ap.add_argument("-newsize", "--newsize", default=128, type=int, 
-        help="Redimensionar a imagen cuadrada para entrada en EAST. (Default: 128)")
+        help="Resize to square image for EAST input. (Default: 128)")
     ap.add_argument("-pad", "--padding", default=0, type=float, 
-        help="Recorta un -pad porciento menos de pixeles en relacion al ancho y alto de la deteccion en EAST. (Default: 0)")
+        help="Trips one '--padding' percent less pixels relative to the width and height of the detection in EAST. (Default: 0)")
     return vars(ap.parse_args())
 
 
 def printSystemConfig(args):
-    print("\nConfiguracion actual de sistema:")
+    print("\nCurrent system configuration:")
     print("\t{}: conf:{} iou:{}".format(args["model"],args["od_conf_threshold"],args["od_iou_threshold"]))
     print("\tEAST: conf:{} iou:{} pad:{} size:{}".format(args["e_conf_threshold"],args["e_iou_threshold"],args["padding"],args["newsize"]))

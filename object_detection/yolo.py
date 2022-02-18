@@ -39,19 +39,6 @@ class Darknet():
         self.net = dknet.load_net(self.cfg_file, self.weights_file, 0)
         self.meta = dknet.load_meta(self.classes_file)
 
-    # def __init__(self, cfg_file, weights_file, classes_file, conf_threshold=.5, iou_threshold=.45):
-
-    #     # Codifico string para compatibilidad con lengaje C
-    #     self.cfg_file = cfg_file.encode('utf-8')
-    #     self.weights_file = weights_file.encode('utf-8')
-    #     self.classes_file = classes_file.encode('utf-8')
-        
-    #     self.conf_threshold = conf_threshold
-    #     self.iou_threshold = iou_threshold
-
-    #     self.net = dknet.load_net(self.cfg_file, self.weights_file, 0)
-    #     self.meta = dknet.load_meta(self.classes_file)
-
     def predict(self, image, class_name="all", filter_by_ratio=False):
         """
         Dado una imagen (o su path) <image>, retorna todos los bounding boxs encontrados 
@@ -135,7 +122,7 @@ class Darknet():
 
         weights_file = os.path.join(weights_folder,version+".weights")
         if not os.path.isfile(weights_file):
-            print(f"Download {weights_file} file!...")
+            print(f"Downloading '{version}' weights for the only time. Please wait ...")
             wget.download(url, out=weights_file)
 
         # Codifico string para compatibilidad con lengaje C
